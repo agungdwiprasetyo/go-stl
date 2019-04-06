@@ -36,14 +36,15 @@ func (s *Stack) Pop() (interface{}, bool) {
 	if s.IsEmpty() {
 		return nil, false
 	}
+
 	l := len(s.elements)
 	val := s.elements[l-1]
 	s.elements = s.elements[:l-1]
 	return val, true
 }
 
-// Peek get top value
-func (s *Stack) Peek() interface{} {
+// Top get peek value
+func (s *Stack) Top() interface{} {
 	if s.IsEmpty() {
 		return nil
 	}

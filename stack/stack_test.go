@@ -18,9 +18,9 @@ func TestStack(t *testing.T) {
 
 		fmt.Println(s)
 
-		peek := s.Peek()
-		if peek.(int) != 30 {
-			t.Errorf("invalid peek value, should 30")
+		top := s.Top()
+		if top.(int) != 30 {
+			t.Errorf("invalid top value, should 30")
 		}
 
 		val, ok := s.Pop()
@@ -31,9 +31,9 @@ func TestStack(t *testing.T) {
 		if val.(int) != 30 {
 			t.Errorf("invalid pop value, should 30")
 		}
-		peek = s.Peek()
-		if peek.(int) != 20 {
-			t.Errorf("invalid peek value, should 20")
+		top = s.Top()
+		if top.(int) != 20 {
+			t.Errorf("invalid top value, should 20")
 		}
 
 		s.Pop()
@@ -46,8 +46,8 @@ func TestStack(t *testing.T) {
 		}
 
 		fmt.Println(s)
-		if peek = s.Peek(); peek != nil {
-			t.Errorf("in empty stack, peek should be nil")
+		if top = s.Top(); top != nil {
+			t.Errorf("in empty stack, top should be nil")
 		}
 	})
 }

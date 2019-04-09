@@ -45,6 +45,9 @@ func (s *Stack) Pop() (interface{}, bool) {
 
 // Top get peek value
 func (s *Stack) Top() interface{} {
+	s.mutex.RLock()
+	defer s.mutex.RUnlock()
+
 	if s.IsEmpty() {
 		return nil
 	}
@@ -54,9 +57,6 @@ func (s *Stack) Top() interface{} {
 
 // IsEmpty check value is empty
 func (s *Stack) IsEmpty() bool {
-	s.mutex.RLock()
-	defer s.mutex.RUnlock()
-
 	return len(s.elements) == 0
 }
 

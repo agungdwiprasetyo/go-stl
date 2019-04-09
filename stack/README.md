@@ -32,6 +32,6 @@ func main() {
 
     isEmpty := s.IsEmpty() // check stack is empty or not
 
-    fmt.Println(s) // TODO: print pretty stack
+    fmt.Println(s) // TODO: print in pretty stack
 }
 ```
